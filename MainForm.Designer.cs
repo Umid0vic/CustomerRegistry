@@ -32,7 +32,7 @@
             grpBoxCustomerDetails = new GroupBox();
             btnAdd = new Button();
             btnEdit = new Button();
-            Delete = new Button();
+            btnDelete = new Button();
             lblID = new Label();
             lblName = new Label();
             lnlOfficePhone = new Label();
@@ -75,14 +75,14 @@
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = true;
             // 
-            // Delete
+            // btnDelete
             // 
-            Delete.Location = new Point(383, 408);
-            Delete.Name = "Delete";
-            Delete.Size = new Size(120, 30);
-            Delete.TabIndex = 4;
-            Delete.Text = "btnDelete";
-            Delete.UseVisualStyleBackColor = true;
+            btnDelete.Location = new Point(383, 408);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(120, 30);
+            btnDelete.TabIndex = 4;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
             // 
             // lblID
             // 
@@ -129,7 +129,7 @@
             Controls.Add(lnlOfficePhone);
             Controls.Add(lblName);
             Controls.Add(lblID);
-            Controls.Add(Delete);
+            Controls.Add(btnDelete);
             Controls.Add(btnEdit);
             Controls.Add(btnAdd);
             Controls.Add(grpBoxCustomerDetails);
@@ -146,7 +146,7 @@
         private GroupBox grpBoxCustomerDetails;
         private Button btnAdd;
         private Button btnEdit;
-        private Button Delete;
+        private Button btnDelete;
         private Label lblID;
         private Label lblName;
         private Label lnlOfficePhone;

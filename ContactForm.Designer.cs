@@ -40,8 +40,8 @@
             lblEmailBusiness = new Label();
             txtCellPhone = new TextBox();
             txtHomePhone = new TextBox();
-            lblCellPhone = new Label();
-            lblHomePhone = new Label();
+            lblPrivatePhone = new Label();
+            lblOfficePhone = new Label();
             grpBoxAddress = new GroupBox();
             cmbCountry = new ComboBox();
             txtZipCode = new TextBox();
@@ -111,8 +111,8 @@
             grpBoxEmailAndPhone.Controls.Add(lblEmailBusiness);
             grpBoxEmailAndPhone.Controls.Add(txtCellPhone);
             grpBoxEmailAndPhone.Controls.Add(txtHomePhone);
-            grpBoxEmailAndPhone.Controls.Add(lblCellPhone);
-            grpBoxEmailAndPhone.Controls.Add(lblHomePhone);
+            grpBoxEmailAndPhone.Controls.Add(lblPrivatePhone);
+            grpBoxEmailAndPhone.Controls.Add(lblOfficePhone);
             grpBoxEmailAndPhone.Location = new Point(12, 118);
             grpBoxEmailAndPhone.Name = "grpBoxEmailAndPhone";
             grpBoxEmailAndPhone.Size = new Size(380, 175);
@@ -166,23 +166,23 @@
             txtHomePhone.Size = new Size(271, 23);
             txtHomePhone.TabIndex = 2;
             // 
-            // lblCellPhone
+            // lblPrivatePhone
             // 
-            lblCellPhone.AutoSize = true;
-            lblCellPhone.Location = new Point(6, 60);
-            lblCellPhone.Name = "lblCellPhone";
-            lblCellPhone.Size = new Size(64, 15);
-            lblCellPhone.TabIndex = 1;
-            lblCellPhone.Text = "Cell phone";
+            lblPrivatePhone.AutoSize = true;
+            lblPrivatePhone.Location = new Point(6, 60);
+            lblPrivatePhone.Name = "lblPrivatePhone";
+            lblPrivatePhone.Size = new Size(80, 15);
+            lblPrivatePhone.TabIndex = 1;
+            lblPrivatePhone.Text = "Private phone";
             // 
-            // lblHomePhone
+            // lblOfficePhone
             // 
-            lblHomePhone.AutoSize = true;
-            lblHomePhone.Location = new Point(6, 30);
-            lblHomePhone.Name = "lblHomePhone";
-            lblHomePhone.Size = new Size(77, 15);
-            lblHomePhone.TabIndex = 0;
-            lblHomePhone.Text = "Home phone";
+            lblOfficePhone.AutoSize = true;
+            lblOfficePhone.Location = new Point(6, 30);
+            lblOfficePhone.Name = "lblOfficePhone";
+            lblOfficePhone.Size = new Size(76, 15);
+            lblOfficePhone.TabIndex = 0;
+            lblOfficePhone.Text = "Office phone";
             // 
             // grpBoxAddress
             // 
@@ -316,8 +316,8 @@
         private GroupBox grpBoxEmailAndPhone;
         private TextBox txtCellPhone;
         private TextBox txtHomePhone;
-        private Label lblCellPhone;
-        private Label lblHomePhone;
+        private Label lblPrivatePhone;
+        private Label lblOfficePhone;
         private TextBox txtEmailPrivate;
         private TextBox txtEmailBusiness;
         private Label lblEmailPrivate;

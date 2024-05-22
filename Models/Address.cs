@@ -24,9 +24,4 @@ public class Address
         : this("", "", "", country)
     {
     }
-
-    public override string ToString()
-    {
-        return $"{Street},\n{ZipCode}, {City},\n{Country}";
-    }
 }

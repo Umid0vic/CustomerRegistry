@@ -5,15 +5,9 @@ public class Customer
     public string ID { get; private set; }
     public Contact Contact { get; set; }
 
-    public Customer(Contact contact)
+    public Customer(string id, Contact contact)
     {
-        ID = Guid.NewGuid().ToString();
-        Contact = contact;
-    }
-
-    public override string ToString()
-    {
-        return
-            $"{ID}: {Contact.FirstName} {Contact.LastName} {Contact.Phone.OfficePhone} {Contact.Email.BusinessEmail}";
+        this.ID = id;
+        this.Contact = contact;
     }
 }

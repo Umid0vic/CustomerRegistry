@@ -10,9 +10,4 @@ public class Email
         this.BusinessEmail = businessEmail;
         this.PrivateEmail = privateEmail;
     }
-
-    public override string ToString()
-    {
-        return $"Emails:\n  Private: {PrivateEmail} \n  Office: {BusinessEmail}";
-    }
 }

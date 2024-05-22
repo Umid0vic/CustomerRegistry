@@ -10,9 +10,4 @@ public class Phone
         this.OfficePhone = phone;
         this.PrivatePhone = cellPhone;
     }
-
-    public override string ToString()
-    {
-        return $"Phone numbers:\n  Home: {OfficePhone},\n  Cell: {PrivatePhone}";
-    }
 }

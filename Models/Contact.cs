@@ -23,9 +23,4 @@ public class Contact
         return !string.IsNullOrEmpty(FirstName) && !string.IsNullOrEmpty(LastName) &&
                !string.IsNullOrEmpty(Address.City) && !string.IsNullOrEmpty(Address.Country);
     }
-
-    public override string ToString()
-    {
-        return $"{FirstName}\n{LastName}\n{Address}\n{Email}\n{Phone}";
-    }
 }

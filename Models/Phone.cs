@@ -2,17 +2,17 @@
 
 public class Phone
 {
-    public string HomePhone { get; private set; }
-    public string CellPhone { get; private set; }
+    public string OfficePhone { get; private set; }
+    public string PrivatePhone { get; private set; }
 
     public Phone(string phone, string cellPhone)
     {
-        this.HomePhone = phone;
-        this.CellPhone = cellPhone;
+        this.OfficePhone = phone;
+        this.PrivatePhone = cellPhone;
     }
 
     public override string ToString()
     {
-        return $"Phone numbers:\n  Home: {HomePhone},\n  Cell: {CellPhone}";
+        return $"Phone numbers:\n  Home: {OfficePhone},\n  Cell: {PrivatePhone}";
     }
 }

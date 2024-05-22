@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             lstboxCustomers = new ListBox();
-            grpCustomerDetails = new GroupBox();
+            grpBoxCustomerDetails = new GroupBox();
             btnAdd = new Button();
             btnEdit = new Button();
             Delete = new Button();
@@ -48,14 +48,14 @@
             lstboxCustomers.Size = new Size(596, 349);
             lstboxCustomers.TabIndex = 0;
             // 
-            // grpCustomerDetails
+            // grpBoxCustomerDetails
             // 
-            grpCustomerDetails.Location = new Point(612, 31);
-            grpCustomerDetails.Name = "grpCustomerDetails";
-            grpCustomerDetails.Size = new Size(280, 358);
-            grpCustomerDetails.TabIndex = 1;
-            grpCustomerDetails.TabStop = false;
-            grpCustomerDetails.Text = "Customer Details";
+            grpBoxCustomerDetails.Location = new Point(612, 31);
+            grpBoxCustomerDetails.Name = "grpBoxCustomerDetails";
+            grpBoxCustomerDetails.Size = new Size(280, 358);
+            grpBoxCustomerDetails.TabIndex = 1;
+            grpBoxCustomerDetails.TabStop = false;
+            grpBoxCustomerDetails.Text = "Customer Details";
             // 
             // btnAdd
             // 
@@ -81,7 +81,7 @@
             Delete.Name = "Delete";
             Delete.Size = new Size(120, 30);
             Delete.TabIndex = 4;
-            Delete.Text = "Delete";
+            Delete.Text = "btnDelete";
             Delete.UseVisualStyleBackColor = true;
             // 
             // lblID
@@ -132,7 +132,7 @@
             Controls.Add(Delete);
             Controls.Add(btnEdit);
             Controls.Add(btnAdd);
-            Controls.Add(grpCustomerDetails);
+            Controls.Add(grpBoxCustomerDetails);
             Controls.Add(lstboxCustomers);
             Name = "MainForm";
             Text = "Customer Registry by Osman";
@@ -143,7 +143,7 @@
         #endregion
 
         private ListBox lstboxCustomers;
-        private GroupBox grpCustomerDetails;
+        private GroupBox grpBoxCustomerDetails;
         private Button btnAdd;
         private Button btnEdit;
         private Button Delete;

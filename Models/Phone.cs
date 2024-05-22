@@ -13,6 +13,6 @@ public class Phone
 
     public override string ToString()
     {
-        return $"Home: {HomePhone}, Cell: {CellPhone}";
+        return $"Phone numbers:\n  Home: {HomePhone},\n  Cell: {CellPhone}";
     }
 }

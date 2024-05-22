@@ -13,6 +13,6 @@ public class Email
 
     public override string ToString()
     {
-        return $"Business: {BusinessEmail}, Private: {PrivateEmail}";
+        return $"Emails:\n  Private: {PrivateEmail} \n  Office: {BusinessEmail}";
     }
 }

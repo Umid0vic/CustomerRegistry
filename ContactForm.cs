@@ -18,6 +18,7 @@ public partial class ContactForm : Form
     public ContactForm()
     {
         InitializeComponent();
+        PopulateCountryComboBox();
     }
 
     /// <summary>
@@ -30,12 +31,17 @@ public partial class ContactForm : Form
         txtLastName.Text = contact.LastName;
         txtPrivatePhone.Text = contact.Phone.PrivatePhone;
         txtOfficePhone.Text = contact.Phone.OfficePhone;
-        txtEmailBusiness.Text = contact.Email.BusinessEmail;
-        txtEmailPrivate.Text = contact.Email.PrivateEmail;
+        txtEmailBusiness.Text = contact.Email.Work;
+        txtEmailPrivate.Text = contact.Email.Personal;
         txtStreet.Text = contact.Address.Street;
         txtCity.Text = contact.Address.City;
         txtZipCode.Text = contact.Address.ZipCode;
         cmbCountry.Text = contact.Address.Country;
+    }
+
+    public void PopulateCountryComboBox()
+    {
+        cmbCountry.Items.AddRange(Enum.GetNames(typeof(Countries)).ToArray());
     }
 
     /// <summary>

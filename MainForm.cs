@@ -89,8 +89,8 @@ public partial class MainForm : Form
                                       $"{contact.Address.ZipCode} {contact.Address.City}\n" +
                                       $"{contact.Address.Country}\n\n" +
                                       "Emails\n" +
-                                      $"    Private:   {contact.Email.PrivateEmail}\n" +
-                                      $"    Office:    {contact.Email.BusinessEmail}\n\n" +
+                                      $"    Private:   {contact.Email.Personal}\n" +
+                                      $"    Office:    {contact.Email.Work}\n\n" +
                                       "Phone numbers\n" +
                                       $"    Private:   {contact.Phone.PrivatePhone}\n" +
                                       $"    Office:    {contact.Phone.OfficePhone}";

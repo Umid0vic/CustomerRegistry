@@ -38,8 +38,8 @@
             txtEmailBusiness = new TextBox();
             lblEmailPrivate = new Label();
             lblEmailBusiness = new Label();
-            txtCellPhone = new TextBox();
-            txtHomePhone = new TextBox();
+            txtPrivatePhone = new TextBox();
+            txtOfficePhone = new TextBox();
             lblPrivatePhone = new Label();
             lblOfficePhone = new Label();
             grpBoxAddress = new GroupBox();
@@ -109,8 +109,8 @@
             grpBoxEmailAndPhone.Controls.Add(txtEmailBusiness);
             grpBoxEmailAndPhone.Controls.Add(lblEmailPrivate);
             grpBoxEmailAndPhone.Controls.Add(lblEmailBusiness);
-            grpBoxEmailAndPhone.Controls.Add(txtCellPhone);
-            grpBoxEmailAndPhone.Controls.Add(txtHomePhone);
+            grpBoxEmailAndPhone.Controls.Add(txtPrivatePhone);
+            grpBoxEmailAndPhone.Controls.Add(txtOfficePhone);
             grpBoxEmailAndPhone.Controls.Add(lblPrivatePhone);
             grpBoxEmailAndPhone.Controls.Add(lblOfficePhone);
             grpBoxEmailAndPhone.Location = new Point(12, 118);
@@ -152,19 +152,19 @@
             lblEmailBusiness.TabIndex = 4;
             lblEmailBusiness.Text = "Email, business";
             // 
-            // txtCellPhone
+            // txtPrivatePhone
             // 
-            txtCellPhone.Location = new Point(103, 60);
-            txtCellPhone.Name = "txtCellPhone";
-            txtCellPhone.Size = new Size(271, 23);
-            txtCellPhone.TabIndex = 3;
+            txtPrivatePhone.Location = new Point(103, 60);
+            txtPrivatePhone.Name = "txtPrivatePhone";
+            txtPrivatePhone.Size = new Size(271, 23);
+            txtPrivatePhone.TabIndex = 3;
             // 
-            // txtHomePhone
+            // txtOfficePhone
             // 
-            txtHomePhone.Location = new Point(103, 27);
-            txtHomePhone.Name = "txtHomePhone";
-            txtHomePhone.Size = new Size(271, 23);
-            txtHomePhone.TabIndex = 2;
+            txtOfficePhone.Location = new Point(103, 27);
+            txtOfficePhone.Name = "txtOfficePhone";
+            txtOfficePhone.Size = new Size(271, 23);
+            txtOfficePhone.TabIndex = 2;
             // 
             // lblPrivatePhone
             // 
@@ -203,7 +203,6 @@
             // 
             // cmbCountry
             // 
-            cmbCountry.BackColor = SystemColors.ControlDark;
             cmbCountry.FormattingEnabled = true;
             cmbCountry.Location = new Point(103, 118);
             cmbCountry.Name = "cmbCountry";
@@ -275,6 +274,7 @@
             btnOk.TabIndex = 9;
             btnOk.Text = "OK";
             btnOk.UseVisualStyleBackColor = true;
+            btnOk.Click += new EventHandler(btnOk_Click);
             // 
             // btnCancel
             // 
@@ -284,6 +284,7 @@
             btnCancel.TabIndex = 10;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += new EventHandler(btnCancel_Click);
             // 
             // ContactForm
             // 
@@ -314,8 +315,8 @@
         private TextBox txtFirstName;
         private Label lblLastName;
         private GroupBox grpBoxEmailAndPhone;
-        private TextBox txtCellPhone;
-        private TextBox txtHomePhone;
+        private TextBox txtPrivatePhone;
+        private TextBox txtOfficePhone;
         private Label lblPrivatePhone;
         private Label lblOfficePhone;
         private TextBox txtEmailPrivate;

@@ -28,34 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lstboxCustomers = new ListBox();
             grpBoxCustomerDetails = new GroupBox();
+            lblCustomerDetails = new Label();
             btnAdd = new Button();
             btnEdit = new Button();
             btnDelete = new Button();
-            lblID = new Label();
-            lblName = new Label();
-            lnlOfficePhone = new Label();
-            lblOfficeEmail = new Label();
+            listViewCustomers = new ListView();
+            columnID = new ColumnHeader();
+            columnName = new ColumnHeader();
+            columnOfficePhone = new ColumnHeader();
+            columnOfficeEmail = new ColumnHeader();
+            grpBoxCustomerDetails.SuspendLayout();
             SuspendLayout();
-            // 
-            // lstboxCustomers
-            // 
-            lstboxCustomers.FormattingEnabled = true;
-            lstboxCustomers.ItemHeight = 15;
-            lstboxCustomers.Location = new Point(10, 40);
-            lstboxCustomers.Name = "lstboxCustomers";
-            lstboxCustomers.Size = new Size(596, 349);
-            lstboxCustomers.TabIndex = 0;
             // 
             // grpBoxCustomerDetails
             // 
-            grpBoxCustomerDetails.Location = new Point(612, 31);
+            grpBoxCustomerDetails.BackColor = SystemColors.Control;
+            grpBoxCustomerDetails.Controls.Add(lblCustomerDetails);
+            grpBoxCustomerDetails.Location = new Point(616, 22);
             grpBoxCustomerDetails.Name = "grpBoxCustomerDetails";
-            grpBoxCustomerDetails.Size = new Size(280, 358);
+            grpBoxCustomerDetails.Size = new Size(276, 367);
             grpBoxCustomerDetails.TabIndex = 1;
             grpBoxCustomerDetails.TabStop = false;
             grpBoxCustomerDetails.Text = "Customer Details";
+            // 
+            // lblCustomerDetails
+            // 
+            lblCustomerDetails.AutoSize = true;
+            lblCustomerDetails.Location = new Point(6, 19);
+            lblCustomerDetails.Name = "lblCustomerDetails";
+            lblCustomerDetails.Size = new Size(194, 15);
+            lblCustomerDetails.TabIndex = 0;
+            lblCustomerDetails.Text = "Select a customer to display details.";
             // 
             // btnAdd
             // 
@@ -65,6 +69,7 @@
             btnAdd.TabIndex = 2;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnEdit
             // 
@@ -74,6 +79,7 @@
             btnEdit.TabIndex = 3;
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnDelete
             // 
@@ -83,73 +89,68 @@
             btnDelete.TabIndex = 4;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
-            // lblID
+            // listViewCustomers
             // 
-            lblID.AutoSize = true;
-            lblID.Location = new Point(15, 20);
-            lblID.Name = "lblID";
-            lblID.Size = new Size(18, 15);
-            lblID.TabIndex = 5;
-            lblID.Text = "ID";
+            listViewCustomers.Columns.AddRange(new ColumnHeader[] { columnID, columnName, columnOfficePhone, columnOfficeEmail });
+            listViewCustomers.FullRowSelect = true;
+            listViewCustomers.GridLines = true;
+            listViewCustomers.Location = new Point(10, 22);
+            listViewCustomers.Name = "listViewCustomers";
+            listViewCustomers.Size = new Size(600, 367);
+            listViewCustomers.TabIndex = 1;
+            listViewCustomers.UseCompatibleStateImageBehavior = false;
+            listViewCustomers.View = View.Details;
+            listViewCustomers.SelectedIndexChanged += listViewCustomers_SelectedIndexChanged;
             // 
-            // lblName
+            // columnID
             // 
-            lblName.AutoSize = true;
-            lblName.Location = new Point(70, 20);
-            lblName.Name = "lblName";
-            lblName.Size = new Size(161, 15);
-            lblName.TabIndex = 6;
-            lblName.Text = "Name (Surename, Firstname)";
+            columnID.Text = "ID";
             // 
-            // lnlOfficePhone
+            // columnName
             // 
-            lnlOfficePhone.AutoSize = true;
-            lnlOfficePhone.Location = new Point(294, 20);
-            lnlOfficePhone.Name = "lnlOfficePhone";
-            lnlOfficePhone.Size = new Size(76, 15);
-            lnlOfficePhone.TabIndex = 7;
-            lnlOfficePhone.Text = "Office Phone";
+            columnName.Text = "Name";
+            columnName.Width = 180;
             // 
-            // lblOfficeEmail
+            // columnOfficePhone
             // 
-            lblOfficeEmail.AutoSize = true;
-            lblOfficeEmail.Location = new Point(473, 20);
-            lblOfficeEmail.Name = "lblOfficeEmail";
-            lblOfficeEmail.Size = new Size(76, 15);
-            lblOfficeEmail.TabIndex = 8;
-            lblOfficeEmail.Text = "Office E-Mail";
+            columnOfficePhone.Text = "Office Phone";
+            columnOfficePhone.Width = 180;
+            // 
+            // columnOfficeEmail
+            // 
+            columnOfficeEmail.Text = "Office Email";
+            columnOfficeEmail.Width = 180;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(904, 450);
-            Controls.Add(lblOfficeEmail);
-            Controls.Add(lnlOfficePhone);
-            Controls.Add(lblName);
-            Controls.Add(lblID);
+            Controls.Add(listViewCustomers);
             Controls.Add(btnDelete);
             Controls.Add(btnEdit);
             Controls.Add(btnAdd);
             Controls.Add(grpBoxCustomerDetails);
-            Controls.Add(lstboxCustomers);
             Name = "MainForm";
             Text = "Customer Registry by Osman";
+            grpBoxCustomerDetails.ResumeLayout(false);
+            grpBoxCustomerDetails.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private ListBox lstboxCustomers;
         private GroupBox grpBoxCustomerDetails;
         private Button btnAdd;
         private Button btnEdit;
         private Button btnDelete;
-        private Label lblID;
-        private Label lblName;
-        private Label lnlOfficePhone;
-        private Label lblOfficeEmail;
+        private Label lblCustomerDetails;
+        private ListView listViewCustomers;
+        private ColumnHeader columnID;
+        private ColumnHeader columnName;
+        private ColumnHeader columnOfficePhone;
+        private ColumnHeader columnOfficeEmail;
     }
 }

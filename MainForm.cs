@@ -2,10 +2,16 @@ using CustomerRegistry.Models;
 
 namespace CustomerRegistry;
 
+/// <summary>
+/// Represents the main form for managing the customer registry.
+/// </summary>
 public partial class MainForm : Form
 {
     private CustomerManager customerMngr;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MainForm"/> class.
+    /// </summary>
     public MainForm()
     {
         InitializeComponent();
@@ -13,6 +19,9 @@ public partial class MainForm : Form
         UpdateCustomerList();
     }
 
+    /// <summary>
+    /// Handles the Add button click event to add a new customer.
+    /// </summary>
     private void btnAdd_Click(object sender, EventArgs e)
     {
         ContactForm contactForm = new ContactForm();
@@ -24,6 +33,9 @@ public partial class MainForm : Form
         }
     }
 
+    /// <summary>
+    /// Handles the Edit button click event to edit an existing customer.
+    /// </summary>
     private void btnEdit_Click(object sender, EventArgs e)
     {
         if (listViewCustomers.SelectedIndices.Count > 0)
@@ -44,6 +56,9 @@ public partial class MainForm : Form
         }
     }
 
+    /// <summary>
+    /// Handles the Delete button click event to delete a customer.
+    /// </summary>
     private void btnDelete_Click(object sender, EventArgs e)
     {
         if (listViewCustomers.SelectedIndices.Count > 0)
@@ -58,6 +73,9 @@ public partial class MainForm : Form
         }
     }
 
+    /// <summary>
+    /// Handles the ListView selected index change event to display customer details.
+    /// </summary>
     private void listViewCustomers_SelectedIndexChanged(object sender, EventArgs e)
     {
         if (listViewCustomers.SelectedIndices.Count > 0)
@@ -71,14 +89,18 @@ public partial class MainForm : Form
                                       $"{contact.Address.ZipCode} {contact.Address.City}\n" +
                                       $"{contact.Address.Country}\n\n" +
                                       "Emails\n" +
-                                      $"    Private: \t{contact.Email.PrivateEmail}\n" +
-                                      $"    Office: \t{contact.Email.BusinessEmail}\n\n" +
+                                      $"    Private:   {contact.Email.PrivateEmail}\n" +
+                                      $"    Office:    {contact.Email.BusinessEmail}\n\n" +
                                       "Phone numbers\n" +
-                                      $"    Private: \t{contact.Phone.PrivatePhone}\n" +
-                                      $"    Office: \t{contact.Phone.OfficePhone}";
+                                      $"    Private:   {contact.Phone.PrivatePhone}\n" +
+                                      $"    Office:    {contact.Phone.OfficePhone}";
         }
     }
 
+
+    /// <summary>
+    /// Updates the customer list in the ListView.
+    /// </summary>
     private void UpdateCustomerList()
     {
         listViewCustomers.Items.Clear();

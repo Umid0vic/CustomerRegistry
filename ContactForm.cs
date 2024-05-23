@@ -2,15 +2,28 @@
 
 namespace CustomerRegistry;
 
+/// <summary>
+/// Represents a form for managing contact details.
+/// </summary>
 public partial class ContactForm : Form
 {
+    /// <summary>
+    /// Gets the contact data entered in the form.
+    /// </summary>
     public Contact ContactData { get; private set; }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ContactForm"/> class.
+    /// </summary>
     public ContactForm()
     {
         InitializeComponent();
     }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ContactForm"/> class with existing contact data.
+    /// </summary>
+    /// <param name="contact">The contact data to initialize the form with.</param>
     public ContactForm(Contact contact) : this()
     {
         txtFirstName.Text = contact.FirstName;
@@ -25,6 +38,9 @@ public partial class ContactForm : Form
         cmbCountry.Text = contact.Address.Country;
     }
 
+    /// <summary>
+    /// Handles the OK button click event to save contact data.
+    /// </summary>
     private void btnOk_Click(object sender, EventArgs e)
     {
         ContactData = new Contact(
@@ -46,6 +62,9 @@ public partial class ContactForm : Form
         }
     }
 
+    /// <summary>
+    /// Handles the Cancel button click event to cancel the operation.
+    /// </summary>
     private void btnCancel_Click(object sender, EventArgs e)
     {
         if (MessageBox.Show("Are you sure you want to cancel?", "Confirm", MessageBoxButtons.YesNo) ==

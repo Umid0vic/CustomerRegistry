@@ -1,3 +1,5 @@
+// Osman Said 23/05/2024
+
 using CustomerRegistry.Models;
 
 namespace CustomerRegistry;
@@ -109,7 +111,7 @@ public partial class MainForm : Form
             ListViewItem item = new ListViewItem(customer.ID);
             item.SubItems.Add(customer.Contact.FirstName + " " + customer.Contact.LastName);
             item.SubItems.Add(customer.Contact.Phone.OfficePhone);
-            item.SubItems.Add(customer.Contact.Email.BusinessEmail);
+            item.SubItems.Add(customer.Contact.Email.Work);
             listViewCustomers.Items.Add(item);
         }
     }

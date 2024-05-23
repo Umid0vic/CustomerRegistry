@@ -1,4 +1,6 @@
-﻿namespace CustomerRegistry.Models;
+﻿// Osman Said 23/05/2024
+
+namespace CustomerRegistry.Models;
 
 /// <summary>
 /// Manages a collection of customers.

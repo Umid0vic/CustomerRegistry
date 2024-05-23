@@ -1,18 +1,48 @@
-﻿namespace CustomerRegistry.Models;
+﻿// Osman Said 23/05/2024
+
+namespace CustomerRegistry.Models;
 
 /// <summary>
 /// Represents a contact with first name, last name, address, phone, and email.
 /// </summary>
 public class Contact
 {
-    public string FirstName { get; private set; }
-    public string LastName { get; private set; }
-    public Address Address { get; private set; }
-    public Phone Phone { get; private set; }
-    public Email Email { get; private set; }
+    private string firstName;
+    private string lastName;
+    private Address address;
+    private Phone phone;
+    private Email email;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Contact"/> class with the specified details.
+    /// Default constructor - calls another constructor in this class
+    /// </summary>
+    public Contact()
+    {
+    }
+
+    /// <summary>
+    /// Constructor with one parameter - calls the constructor with 
+    /// five parameters, using default values as the other arguments.
+    /// </summary>
+    /// <param name="firstName">The first name.</param>
+    public Contact(string firstName) : this(firstName, string.Empty, new Address(), new Phone(), new Email())
+    {
+    }
+
+    /// <summary>
+    /// Copy constructor returning copy
+    /// </summary>
+    public Contact(Contact theOther)
+    {
+        this.firstName = theOther.firstName;
+        this.lastName = theOther.lastName;
+        this.address = new Address(theOther.address);
+        this.phone = new Phone(theOther.phone);
+        this.email = new Email(theOther.email);
+    }
+
+    /// <summary>
+    /// Constructor with five parameters.
     /// </summary>
     /// <param name="firstName">The first name.</param>
     /// <param name="lastName">The last name.</param>
@@ -21,21 +51,64 @@ public class Contact
     /// <param name="email">The email addresses.</param>
     public Contact(string firstName, string lastName, Address address, Phone phone, Email email)
     {
-        FirstName = firstName;
-        LastName = lastName;
-        Address = address;
-        Phone = phone;
-        Email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+    }
+
+    /// <summary>
+    /// Property related to the firstName field.
+    /// </summary>
+    public string FirstName
+    {
+        get { return firstName; }
+        set { firstName = value; }
+    }
+
+    /// <summary>
+    /// Property related to the lastName field.
+    /// </summary>
+    public string LastName
+    {
+        get { return lastName; }
+        set { lastName = value; }
+    }
+
+    /// <summary>
+    /// Property related to the address field.
+    /// </summary>
+    public Address Address
+    {
+        get { return address; }
+        set { address = value; }
+    }
+
+    /// <summary>
+    /// Property related to the phone field.
+    /// </summary>
+    public Phone Phone
+    {
+        get { return phone; }
+        set { phone = value; }
+    }
+
+    /// <summary>
+    /// Property related to the email field.
+    /// </summary>
+    public Email Email
+    {
+        get { return email; }
+        set { email = value; }
     }
 
     /// <summary>
     /// Checks if the contact data is valid.
     /// </summary>
-    /// <returns>True if the data is valid; otherwise, false.</returns>
     public bool CheckData()
     {
-        // Basic validation for required fields
-        return !string.IsNullOrEmpty(FirstName) && !string.IsNullOrEmpty(LastName) &&
-               !string.IsNullOrEmpty(Address.City) && !string.IsNullOrEmpty(Address.Country);
+        return !string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName) &&
+               !string.IsNullOrEmpty(address.City) && !string.IsNullOrEmpty(address.Country);
     }
 }

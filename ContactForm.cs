@@ -1,4 +1,6 @@
-﻿using CustomerRegistry.Models;
+﻿// Osman Said 23/05/2024
+
+using CustomerRegistry.Models;
 
 namespace CustomerRegistry;
 
@@ -36,7 +38,7 @@ public partial class ContactForm : Form
         txtStreet.Text = contact.Address.Street;
         txtCity.Text = contact.Address.City;
         txtZipCode.Text = contact.Address.ZipCode;
-        cmbCountry.Text = contact.Address.Country;
+        cmbCountry.SelectedItem = contact.Address.Country;
     }
 
     public void PopulateCountryComboBox()
@@ -52,7 +54,7 @@ public partial class ContactForm : Form
         ContactData = new Contact(
             txtFirstName.Text,
             txtLastName.Text,
-            new Address(txtStreet.Text, txtCity.Text, txtZipCode.Text, cmbCountry.Text),
+            new Address(txtStreet.Text, txtCity.Text, txtZipCode.Text, cmbCountry.SelectedItem?.ToString()),
             new Phone(txtPrivatePhone.Text, txtOfficePhone.Text),
             new Email(txtEmailBusiness.Text, txtEmailPrivate.Text)
         );
